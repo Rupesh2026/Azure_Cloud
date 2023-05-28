@@ -1,0 +1,9 @@
+{
+	"name": "Covid-Reports-Data-Factrory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3aabba01-17c2-4502-a189-7bd5e7da52f9",
+		"tenantId": "3c71cbab-b5ed-4f3b-ac0d-95509d6c0e93"
+	}
+}
