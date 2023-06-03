@@ -2,14 +2,14 @@
 	"name": "Http_ECDC",
 	"properties": {
 		"parameters": {
-			"sourcebaseURL": {
+			"sourceBaseURL": {
 				"type": "string"
 			}
 		},
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "@{linkedService().sourcebaseURL}",
+			"url": "@{linkedService().sourceBaseURL}",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
