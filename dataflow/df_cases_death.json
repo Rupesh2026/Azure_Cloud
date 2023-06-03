@@ -1,0 +1,27 @@
+{
+	"name": "df_cases_death",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "df_raw_cases_deaths",
+						"type": "DatasetReference"
+					},
+					"name": "casesdeathssource"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          {<!DOCTYPE html>} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> casesdeathssource"
+			]
+		}
+	}
+}
