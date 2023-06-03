@@ -201,6 +201,17 @@
 				}
 			}
 		],
+		"parameters": {
+			"sinkFileName": {
+				"type": "string"
+			},
+			"sourceRelativeURL": {
+				"type": "string"
+			},
+			"sourceBaseURL": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
