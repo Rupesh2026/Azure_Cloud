@@ -20,7 +20,7 @@
 			"recurrence": {
 				"frequency": "Day",
 				"interval": 1,
-				"startTime": "2023-06-03T15:02:00Z",
+				"startTime": "2023-06-03T15:04:00Z",
 				"timeZone": "UTC"
 			}
 		}
