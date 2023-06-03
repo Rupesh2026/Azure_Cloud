@@ -22,10 +22,10 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "ds_processed_cases_deaths",
+						"referenceName": "ds_Cases_Deaths",
 						"type": "DatasetReference"
 					},
-					"name": "CasesDeathSink"
+					"name": "sink"
 				}
 			],
 			"transformations": [
@@ -78,8 +78,8 @@
 				"          indicator,",
 				"          daily_count,",
 				"          source,",
-				"          each(match(name == 'date'),",
-				"               'reported' + '_date' = $$)",
+				"          each(match(name=='date'),",
+				"               'reported'+'_date' = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> OnlyRequiredFileds",
@@ -110,12 +110,11 @@
 				"     skipDuplicateMapOutputs: true) ~> selectForSink",
 				"selectForSink sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     truncate: true,",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> CasesDeathSink"
+				"     skipDuplicateMapOutputs: true) ~> sink"
 			]
 		}
 	}
