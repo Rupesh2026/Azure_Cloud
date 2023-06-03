@@ -1,9 +1,9 @@
 {
-	"name": "Pl_Ingest_Cases_Death_data",
+	"name": "Pl_Ingest_ECDC_data",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy cases deaths data",
+				"name": "Copy ECDC data",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -48,18 +48,38 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_Cases_Deaths_HTTP",
-						"type": "DatasetReference"
+						"referenceName": "ds_ecdc_raw_csv_HTTP",
+						"type": "DatasetReference",
+						"parameters": {
+							"relativeURL": {
+								"value": "@pipeline().parameters.sourcerelativeURL",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_Cases_Death_DL",
-						"type": "DatasetReference"
+						"referenceName": "ds_ecdc_raw_csv_DL",
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": {
+								"value": "@pipeline().parameters.SinkFileName",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"sourcerelativeURL": {
+				"type": "string"
+			},
+			"SinkFileName": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
