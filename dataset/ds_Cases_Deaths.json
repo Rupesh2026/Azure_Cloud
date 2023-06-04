@@ -1,0 +1,23 @@
+{
+	"name": "ds_Cases_Deaths",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_covidreportdl",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "ecdc/deaths",
+				"fileSystem": "procecssed"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
